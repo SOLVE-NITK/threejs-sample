@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLVE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css" />
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
+    ></script>
+    <script defer type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script defer type="module" src="./js/geometries.js"></script>
+    <script defer type="module" src="./js/script.js"></script>
+    <!-- <script defer type="module" src="./js/init.js"></script> -->
+  </head>
+  <body>
+    <!-- Logo -->
+    <!-- Experiment Title -->
+    <!-- Tools Sections -->
+    <!-- Tools Container -->
+    <!-- Simulation Container -->
+    <div class="title-div-container">
+      <div class="title-div">
+        <div class="logo-div">
+          <a href="#"
+            ><img src="images/logo_nitk.png" alt="Logo" class="logo"
+          /></a>
+        </div>
+        <h1>Three Js Sample</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebar">
+        <ul class="tool-menu">
+          <li class="tool-list">
+            <a href="#simulation" class="tool-link" title="Simulation"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#089B93"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zM7.5 6h.008v.008H7.5V6zm2.25 0h.008v.008H9.75V6z"
+                />
+              </svg>
+            </a>
+            <span>Simulation</span>
+          </li>
+          <li class="tool-list">
+            <a href="#variables" class="tool-link" title="Variables"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ffffff"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#089B93"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.745 3A23.933 23.933 0 003 12c0 3.183.62 6.22 1.745 9M19.5 3c.967 2.78 1.5 5.817 1.5 9s-.533 6.22-1.5 9M8.25 8.885l1.444-.89a.75.75 0 011.105.402l2.402 7.206a.75.75 0 001.104.401l1.445-.889m-8.25.75l.213.09a1.687 1.687 0 002.062-.617l4.45-6.676a1.688 1.688 0 012.062-.618l.213.09"
+                /></svg
+            ></a>
+            <span>Variables</span>
+          </li>
+          <li class="tool-list">
+            <a href="#comments" class="tool-link" title="Comments"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#089B93"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                /></svg
+            ></a>
+            <span>Results</span>
+          </li>
+          <li class="tool-list">
+            <img
+              id="playpausebutton"
+              src="images/bluepausedull.svg"
+              alt=""
+              class="icons"
+            />
+            <span class="playPause">Pause</span>
+          </li>
+          <!-- <li class="tool-list">
+            <img id="graphbutton" onclick="plotgraph()" src="./images/graphbutton.svg" alt="" class="icons"/>
+            <span>Graph</span>
+          </li> -->
+        </ul>
+      </div>
+      <div class="main">
+        <div class="main-section">
+          <div id="simulation" class="main__task-div">
+            <!-- <div id="controls" class="div__control">
+              <img id="playpausebutton" onclick="simstate()" src="./images/blueplaydull.svg" alt="" />
+              <img id="graphbutton" onclick="plotgraph()" src="./images/graphbutton.svg" alt="" />
+            </div> -->
+            <h3 class="task-title">Simulation</h3>
+            <div class="canvas__div">
+              <div id="canvas-container">
+                <canvas id="canvas" class="canvas"></canvas>
+              </div>
+              <button class="mode">Dark</button>
+            </div>
+          </div>
+          <div id="variables" class="main__task-div">
+            <div class="settings-sections">
+              <h3 class="task-title">Variables</h3>
+              <div class="variables-sections">
+                <div class="var-div">
+                  <label for="lengthSpinner">n</label>
+                  <input class="var-spinner" id="nSpinner" name="value" />
+                  <span>rpm</span>
+                  <div class="var-slider" id="nSlider"></div>
+                </div>
+                <div class="var-div">
+                  <label for="massSpinner"> Mass</label>
+                  <input class="var-spinner" id="massSpinner" name="value" />
+                  <span>kg</span>
+                  <div class="var-slider" id="massSlider"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div id="comments" class="main__task-div">
+            <h3 class="task-title">Results</h3>
+            <div class="settings-sections">
+              <div class="comment-sections">
+                <p id="p1">m = <span id="mass"></span></p>
+                <p id="p2">k = <span id="k"></span></p>
+                <p id="p3">c = <sapn id="c"></span></p>
+                <div id="omegavalues">
+                  <p>&#969;<sub>n</sub> = <span id="wn"></span></p>
+                  <p>&#969;<sub>d</sub> = <span id="wd"></span></p> 
+                </div>
+            </div>
+          </div>
+          </div> -->
+          <div class="main__task-div footer">
+            <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
